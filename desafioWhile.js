@@ -15,14 +15,32 @@ Código Condição de pagamento
  * No cartão
  */
 //recebendo o preço do produto transformando o valor para decimal
-const precoProduto = parseFloat(prompt("Qual o preço do produto?"));
+
+/**
+ * Estruturas de repetição
+ * 
+ * WHILE --> ENQUANTO */
+
+let precoProduto = parseFloat(prompt("Qual o preço do produto?")); //R$ 400 -->NaN
+
+/*while(isNaN(precoProduto) || precoProduto <= 0) {
+  alert("O preço digitado é inválido. Por favor, informe apenas com números, sem carácteres especiais ou acentos.");
+  precoProduto = parseFloat(prompt("Qual o preço do produto?"));
+}*/
+
 const mensagem = `
 Informe o método de pagamento:
 Digite 1 para pagamento em dinheiro
 Digite 2 para pagamento em cheque
 Digite 3 para pagamento com cartão
 `
-const metodoDePagamento = prompt(mensagem);
+let metodoDePagamento = parseInt(prompt(mensagem));
+
+while(isNaN(metodoDePagamento < 1 || metodoDePagamento > 3)) {
+ alert("O número digitado é inválido. Por favor, informe a forma correta de pagamento.");
+ metodoDePagamento = parseInt(prompt(mensagem));
+
+}
 
 /**
  * Se o valor da constante método de pagamento for 1 ou 2, 
@@ -30,7 +48,7 @@ const metodoDePagamento = prompt(mensagem);
  */
 if(metodoDePagamento == 1 || metodoDePagamento == 2) {
   const precoFinal = precoProduto * 0.9
-  alert(`O preço final do pagamento é ${precoFinal} reais.`)
+  alert(`O preço final do pagamento é ${precoFinal.toFixed(2)} reais.`)
 } else if(metodoDePagamento == 3){
   /**
    * 1 parcela = 15% desconto
