@@ -9,9 +9,7 @@ let confirma = prompt("Gostaria de inserir mais numeros?")
 while (confirma == "sim") {
     const numeros = parseInt(prompt("insira um numero")) 
     array.push(numeros)
-    soma = array.reduce(function (total, numero){
-        return total + numero
-    },0)
+    soma = array.reduce((total, numero) => total + numero, 0)
     somaMediaArray = soma / array.length
     confirma = prompt("Gostaria de inserir mais numeros?")
  }
