@@ -1,4 +1,5 @@
-/* Faça um programa em Javascript que leia um vetor de seis elementos numéricos inteiros, calcule e mostre:
+/* Faça um programa em Javascript que leia um vetor de seis elementos numéricos inteiros, 
+calcule e mostre:
 a) A quantidade de números pares
 b) Quais os números pares
 c) A quantidade de números ímpares

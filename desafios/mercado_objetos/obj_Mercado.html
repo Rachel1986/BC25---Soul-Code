@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Lista de produtos</h1>
+    <script>
+      /* Crie um algortimo que recebe informações de 15 produtos. Cada produto possui nome, 
+marca, uma foto (link de uma imagem da internet), preço unitário e a quantidade de 
+produtos em estoque. Ao receber essas informações dos produtos, imprima no HTML essas 
+informações de cada produto e o produto entre o preço e a quantidade de produtos 
+em estoque (preço total). */
+      let produtos = {
+        nome: ' ',
+        marca: ' ',
+        foto: ' ',
+        precoUnitario: 0,
+        qtdEstoque: 0,
+      };
+
+      let produtosArray = [];
+
+      for (let i = 1; i <= 15; i++) {
+        produtos.nome = prompt('Qual o nome do ' + i + '° ' + 'produto?');
+        produtos.marca = prompt('Qual a marca do produto?');
+        produtos.foto = prompt('Cole aqui o link da foto do produto.');
+        produtos.precoUnitario = prompt('Qual o preço do produto?');
+        produtos.qtdEstoque = prompt('Qual a quantidade do produto?');
+        produtos.precoTotal = produtos.precoUnitario * produtos.qtdEstoque;
+
+        document.write(
+          `<img src="${produtos.foto}" alt=${
+            produtos.nome
+          } width=200px heigth=200px><p>Nome do produto: ${
+            produtos.nome
+          }</br> Marca do produto: ${
+            produtos.marca
+          }</br> Preço do produto: R$ ${produtos.precoUnitario.toFixed(
+            2
+          )}</br>Quantidade: ${
+            produtos.qtdEstoque
+          }</br> Preço total: R$ ${produtos.precoTotal.toFixed(2)}</br>`
+        );
+        produtosArray.push(produtos);
+      }
+    </script>
+  </body>
+</html>
